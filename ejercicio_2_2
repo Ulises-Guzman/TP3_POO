@@ -3,7 +3,7 @@ print(".: Encapsulamiento :.")
 print()
 
 class Persona:
-    def __init__(self, nombre = None, edad = None):
+    def __init__(self, nombre=None, edad=None):
         self.__nombre = nombre
         self.__edad = edad
 
