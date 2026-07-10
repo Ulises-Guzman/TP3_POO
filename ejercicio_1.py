@@ -19,7 +19,7 @@ class Circulo:
 
     def calcular_area(self, radio):
         PI = 3.14
-        area = PI * (radio^2)
+        area = PI * (radio**2)
         print()
         print("> El área del círculo es: ") 
         print(f"- Area: {round(area, 2)}")
