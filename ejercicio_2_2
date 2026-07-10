@@ -1,0 +1,93 @@
+print()
+print(".: Encapsulamiento :.")
+print()
+
+class Persona:
+    def __init__(self, nombre = None, edad = None):
+        self.__nombre = nombre
+        self.__edad = edad
+
+    # Getter
+    @property
+    def nombre(self):
+        return self.__nombre
+
+    # Setter
+    @nombre.setter
+    def nombre(self, nuevo_nombre):
+        self.__nombre = nuevo_nombre
+
+    # Getter
+    @property
+    def edad(self):
+        return self.__edad
+
+    # Setter
+    def edad(self, nueva_edad):
+        self.__edad = nueva_edad
+
+class ContadorInstancias:
+    contador = 0
+
+    def __init__(self):
+        ContadorInstancias.contador += 1
+
+
+# Interacción con usuario, Objeto Persona
+print("- Carga de datos a travás de Setters")
+print("> Se pedirán 3 personas...")
+print("- 1.Ingrese un nombre de persona y su edad...")
+print()
+
+nombre = input("Nombre: ")
+edad = input("Edad: ")
+
+persona1 = Persona()
+cont_persona1 = ContadorInstancias()
+persona1.nombre = nombre
+persona1.edad = edad
+
+print()
+print("- 2.Ingrese otro nombre de persona y su edad...")
+print()
+
+nombre = input("Nombre: ")
+edad = input("Edad: ")
+
+persona2 = Persona()
+cont_persona2 = ContadorInstancias()
+persona2.nombre = nombre
+persona2.edad = edad
+
+print()
+print("- 3.Ingrese otro nombre de persona y su edad...")
+print()
+
+nombre = input("Nombre: ")
+edad = input("Edad: ")
+
+persona3 = Persona()
+cont_persona3 = ContadorInstancias()
+persona3.nombre = nombre
+persona3.edad = edad
+
+print()
+
+print("- Muestra de datos a través de Getters")
+print()
+
+print(f"> Nombre: {persona1.nombre}")
+print(f"> Edad: {persona1.edad}")
+print()
+
+print(f"> Nombre: {persona2.nombre}")
+print(f"> Edad: {persona2.edad}")
+print()
+
+print(f"> Nombre: {persona3.nombre}")
+print(f"> Edad: {persona3.edad}")
+print()
+
+print(f"> Cantidad de objetos instanciados: {ContadorInstancias.contador}")
+print()
+print("----------------------------------------------------------------------")
