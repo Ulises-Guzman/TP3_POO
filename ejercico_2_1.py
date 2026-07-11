@@ -23,7 +23,7 @@ class Circulo:
     def calcular_area(self, radio):
         PI = 3.14
         self.area = PI * (radio**2)
-        
+
 
     def calcular_perimetro(self, radio):
         PI = 3.14

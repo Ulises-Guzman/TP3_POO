@@ -18,7 +18,7 @@ class Vehiculo:
     def marca(self, nueva_marca):
         self.__marca = nueva_marca
 
-# Getter
+    # Getter
     @property
     def modelo(self):
         return self.__modelo
@@ -38,11 +38,13 @@ class Vehiculo:
     def anio(self, nuevo_anio):
         self.__anio = nuevo_anio
 
-    def arrancar():
-        return True            
+    def encender(self, opcion):
+        if opcion == "on":
+            return print("> El vehículo se encendió...")
 
-    def apagar():
-        return False
+    def apagar(self, opcion):
+        if opcion == "on":
+            return print("> El ve´hiculo se apagó...")
 
 class Auto(Vehiculo):
     def __init__(self, marca=None, modelo=None, anio=None, dominio=None, color=None):
@@ -111,7 +113,7 @@ class Moto(Vehiculo):
         self.__color = nuevo_color
 
     def activar_potencia(self, opcion):
-        if opcion:
+        if opcion == "on":
             return print("> Se activó modo alta potencia...")
         else:
             return print("> Se desactivó modo alta potencia...")
@@ -134,6 +136,11 @@ auto1.dominio = dominio
 auto1.color = color
 
 print()
+print("- Encender el auto?...")
+print()
+encender_auto = input("On/Off: ").lower()
+
+print()
 print("- Activar o desactivar modo nitro...")
 print()
 nitro = input("On/Off: ").lower()
@@ -148,10 +155,14 @@ print(f"    - Dominio : {auto1.dominio}")
 print(f"    - Color : {auto1.color}")
 
 print()
+auto1.encender(encender_auto)
+
+print()
 print("> Modo: ")
 auto1.activar_nitro(nitro)
 
 # Interacción con usuario
+print()
 print("- Ingrese los siguientes datos de la moto...")
 print()
 
@@ -169,18 +180,26 @@ moto1.dominio = dominio
 moto1.color = color
 
 print()
+print("- Encender la moto?...")
+print()
+encender_moto = input("On/Off: ").lower()
+
+print()
 print("- Activar o desactivar modo alta potencia...")
 print()
 alta_potencia = input("On/Off: ").lower()
 
 # Salida de estado Moto
 print()
-print("> Los datos del auto son: ")
+print("> Los datos de la moto son: ")
 print(f"    - Marca : {moto1.marca}")
 print(f"    - Modelo : {moto1.modelo}")
 print(f"    - Año : {moto1.anio}")
 print(f"    - Dominio : {moto1.dominio}")
 print(f"    - Color : {moto1.color}")
+
+print()
+moto1.encender(encender_moto)
 
 print()
 print("> Modo: ")

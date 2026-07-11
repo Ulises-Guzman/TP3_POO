@@ -31,10 +31,6 @@ class Empleado(Persona):
         super().__init__(nombre, edad)
         self.__sueldo = sueldo
 
-    def calculo_bonificaciones(self, sueldo, bonificacion ):
-        sueldo_total = sueldo + (sueldo * (bonificacion/100))
-        return sueldo_total
-
     # Getter
     @property
     def sueldo(self):
@@ -45,6 +41,9 @@ class Empleado(Persona):
     def sueldo(self, nuevoSueldo):
         self.__sueldo = nuevoSueldo
 
+    def calculo_bonificaciones(self, sueldo, bonificacion ):
+        sueldo_total = sueldo + (sueldo * (bonificacion/100))
+        return sueldo_total
 
 print("- Ingrese los siguientes datos del empleado...")
 print()
