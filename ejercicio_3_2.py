@@ -41,6 +41,7 @@ class Empleado(Persona):
         return self.__sueldo
     
     # Setter
+    @sueldo.setter
     def sueldo(self, nuevoSueldo):
         self.__sueldo = nuevoSueldo
 

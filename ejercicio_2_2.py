@@ -23,6 +23,7 @@ class Persona:
         return self.__edad
 
     # Setter
+    @edad.setter
     def edad(self, nueva_edad):
         self.__edad = nueva_edad
 

@@ -23,6 +23,7 @@ class Persona:
         return self.__edad
 
     # Setter
+    @edad.setter
     def edad(self, nueva_edad):
         self.__edad = nueva_edad
 
@@ -38,6 +39,7 @@ class Estudiante(Persona):
         return self.__curso
     
     # Setter
+    @curso.setter
     def curso(self, nuevo_curso):
         self.__curso = nuevo_curso
 
@@ -47,6 +49,7 @@ class Estudiante(Persona):
         return self.__nota_final
 
     # Setter
+    @nota_final.setter
     def nota_final(self, nueva_nota):
         self.__nota_final = nueva_nota
 
