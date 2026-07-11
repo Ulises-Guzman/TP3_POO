@@ -5,7 +5,7 @@ print()
 class Vehiculo:
     def __init__(self, marca=None, modelo=None, anio=None):
         self.__marca = marca
-        self.__modelo= modelo
+        self.__modelo = modelo
         self.__anio = anio
 
     # Getter
