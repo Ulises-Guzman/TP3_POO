@@ -71,6 +71,7 @@ class Tienda:
         print()
 
     def listar_productos(self):
+        print()
         print("> Lista de productos: ")
         print()
 
