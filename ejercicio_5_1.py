@@ -86,12 +86,22 @@ class Biblioteca:
     def devolver_libro(self, libro):
         indice1 = -1
         indice2 = -1
+        ban = False
         for indice in range(0, len(self.libros_prestados), 2):
             item = self.libros_prestados[indice]  
             if item.titulo == libro:
                 indice1 = indice
                 indice2 = indice + 1
+                ban = True
                 break
+
+        if ban == False:
+            print()
+            print(f"> El libro ingresado no fue prestado...")
+            print()
+            print("> Presione un tecla para continuar...")
+            input()
+            print()
 
         if indice1 != -1:
             indices_a_eliminar = sorted([indice1, indice2], reverse=True)
