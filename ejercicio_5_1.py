@@ -69,8 +69,6 @@ class Biblioteca:
     libros_prestados = []
 
     def __init__(self, libros_prestados=[]):
-        # Biblioteca.libros = libros
-        # Biblioteca.usuarios = usuarios
         Biblioteca.libros_prestados = libros_prestados
 
     def prestar_libro(self, libro, usuario):
