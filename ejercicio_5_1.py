@@ -78,7 +78,7 @@ class Biblioteca:
         Biblioteca.libros_prestados.append(usuario)
 
         print()
-        print(f"> Libro {libro.titulo} prestado a usuario {usuario.nombre}")
+        print(f"> Libro '{libro.titulo}' prestado a usuario '{usuario.nombre}'")
 
         print()
         print("> Presione un tecla para continuar...")
@@ -86,15 +86,29 @@ class Biblioteca:
         print()
     
     def devolver_libro(self, libro):
+        indice1 = -1
+        indice2 = -1
         for indice in range(0, len(self.libros_prestados), 2):
             item = self.libros_prestados[indice]  
             if item.titulo == libro:
-                del self.libros_prestados[indice : indice + 1]
-                print(f"> Libro {libro} devuelto...")
-            break
+                indice1 = indice
+                indice2 = indice + 1
+                break
 
-        
-    
+        if indice1 != -1:
+            indices_a_eliminar = sorted([indice1, indice2], reverse=True)
+            for indice in indices_a_eliminar:
+                del self.libros_prestados[indice]
+            
+            print()
+            print(f"> Libro '{libro}' devuelto...")
+            print()
+            print("> Presione un tecla para continuar...")
+            input()
+            print()
+
+
+
     def listar_prestamos(self):
         if len(self.libros_prestados) == 0:
             print()
@@ -115,7 +129,6 @@ class Biblioteca:
             print("> Presione un tecla para continuar...")
             input()
             print()
-            
 
 
 biblioteca1 = Biblioteca()
@@ -156,7 +169,8 @@ while True:
         biblioteca1.prestar_libro(libro1, usuario1)
 
     elif opcion == "2":
-        print("- Si quiere devolver un libro, ingrese título del libro y nombre del usuario...")
+        print()
+        print("- Si quiere devolver un libro, ingrese título del libro...")
         print()
 
         titulo = input("Titulo del libro: ")
